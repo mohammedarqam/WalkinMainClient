@@ -1,0 +1,7 @@
+{
+  "name": "wm",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
