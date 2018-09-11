@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>{{rName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngFor="let i of  (items | async)?.slice().reverse()" >
+    <ion-card-content>
+      <ion-card-title>{{i.ItemName}} </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

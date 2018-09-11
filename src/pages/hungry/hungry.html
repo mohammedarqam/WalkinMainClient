@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>WalkIn</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-card *ngFor="let r of  (restaurants | async)?.slice().reverse()" (click)="vMenu(r.key,r.RestaurantName)" >
+    <ion-card-content>
+      <ion-card-title>{{r.RestaurantName}} </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

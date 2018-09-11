@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+      <ion-item>
+        <ion-label floating>Full Name</ion-label>
+        <ion-input type="text" autofocus [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Phone Number</ion-label>
+        <ion-input type="number" [(ngModel)]="phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input [type]="tp" [(ngModel)]="pass"></ion-input>
+        <button clear ion-button small (click)="viewHidePass()" *ngIf="!pv" item-end >Show</button>
+        <button clear ion-button small (click)="viewHidePass()" *ngIf="pv" item-end >Hide</button>
+      </ion-item>
+      <button ion-button [disabled]="loadBtn" block (click)="checkData()">{{mainBtn}}</button>
+
+
+</ion-content>

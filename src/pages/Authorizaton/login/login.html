@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Log In</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-slides>
+    <ion-slide>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input [type]="tp" [(ngModel)]="pass"></ion-input>
+        <button clear ion-button small (click)="viewHidePass()" *ngIf="!pv" item-end >Show</button>
+        <button clear ion-button small (click)="viewHidePass()" *ngIf="pv" item-end >Hide</button>
+      </ion-item>
+      <button ion-button [disabled]="loadBtn" (click)="checkData()">{{mainBtn}}</button>
+      <ion-item>
+      <button ion-button clear>Forgot Password?</button>
+      </ion-item>
+        <ion-footer>
+            <button ion-button outline block>REGISTER</button>
+        </ion-footer>
+    </ion-slide>
+</ion-slides>
+  
+</ion-content>
