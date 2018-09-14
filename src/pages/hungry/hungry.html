@@ -1,12 +1,26 @@
 <ion-header>
   <ion-navbar color="primary" >
     <ion-title>WalkIn</ion-title>
-  </ion-navbar>
+  <ion-buttons end>
+    <button ion-button icon-only (click)="viewCart()">
+      <ion-icon name="md-cart"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
-  
+<ion-content>
+
+
+  <div class="wrapper">
+    <ion-slides   *ngIf="banners && banners.length" autoplay="3000" loop="true" speed="500" pager="true" >
+      <ion-slide *ngFor="let banner of banners ">
+        <img [src]="banner.Image"  class="bannerImg" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+
   <ion-card *ngFor="let r of  (restaurants | async)?.slice().reverse()" (click)="vMenu(r.key,r.RestaurantName)" >
     <ion-card-content>
       <ion-card-title>{{r.RestaurantName}} </ion-card-title>

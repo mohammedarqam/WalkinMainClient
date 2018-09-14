@@ -18,7 +18,12 @@ import { ExplorePage } from '../pages/explore/explore';
 import { OffersPage } from '../pages/offers/offers';
 import { CartPage } from '../pages/cart/cart';
 import { MePage } from '../pages/me/me';
-import { ViewMenuPage } from '../pages/view-menu/view-menu';
+import { ViewMenuPage } from '../pages/Extra/Menu Extra/view-menu/view-menu';
+import { ItemDetailsPage } from '../pages/Extra/Menu Extra/item-details/item-details';
+import { ViewNumberPackagesPage } from '../pages/Extra/Package Extra/view-number-packages/view-number-packages';
+import { ViewTypePackagesPage } from '../pages/Extra/Package Extra/view-type-packages/view-type-packages';
+import { ViewPackageDetailsPage } from '../pages/Extra/Package Extra/view-package-details/view-package-details';
+import { OrdersPage } from '../pages/orders/orders';
 
 
 
@@ -48,6 +53,11 @@ export const firebaseCred = {
     CartPage,
     MePage,
     ViewMenuPage,
+    ItemDetailsPage,
+    ViewNumberPackagesPage,
+    ViewTypePackagesPage,
+    ViewPackageDetailsPage,
+    OrdersPage,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +80,11 @@ export const firebaseCred = {
     CartPage,
     MePage,
     ViewMenuPage,
+    ItemDetailsPage,
+    ViewNumberPackagesPage,
+    ViewTypePackagesPage,
+    ViewPackageDetailsPage,
+    OrdersPage,
   ],
   providers: [
     StatusBar,
