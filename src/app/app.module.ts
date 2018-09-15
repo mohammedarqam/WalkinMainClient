@@ -28,13 +28,13 @@ import { OrdersPage } from '../pages/orders/orders';
 
 
 export const firebaseCred = {
-  apiKey: "AIzaSyAE8aWWXXnIemdrHUPA7e93GqA5hNEK1SU",
-  authDomain: "walkin-app-codebro.firebaseapp.com",
-  databaseURL: "https://walkin-app-codebro.firebaseio.com",
-  projectId: "walkin-app-codebro",
-  storageBucket: "walkin-app-codebro.appspot.com",
-  messagingSenderId: "1066189513591"
-  };
+  apiKey: "AIzaSyBrOwk3PvUtFXM_wxAW-OQ7leXTlDeLSkk",
+  authDomain: "walkin-2215d.firebaseapp.com",
+  databaseURL: "https://walkin-2215d.firebaseio.com",
+  projectId: "walkin-2215d",
+  storageBucket: "walkin-2215d.appspot.com",
+  messagingSenderId: "946109608266"
+};
   
   firebase.initializeApp(firebaseCred);
 

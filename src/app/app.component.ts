@@ -24,7 +24,7 @@ export class MyApp {
 
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-        firebase.database().ref("Users").child(user.uid).once('value',itemSnap=>{
+        firebase.database().ref("User Data/Users").child(user.uid).once('value',itemSnap=>{
             if(itemSnap.exists()){
               var welMsg = "Welcome"+" "+itemSnap.val().Name;
               this.rootPage = TabsPage;

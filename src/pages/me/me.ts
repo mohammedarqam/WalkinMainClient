@@ -15,6 +15,8 @@ export class MePage {
   public navParams: NavParams
   ) {
   }
+  // restaurantRef = this.db.list(`Restaurant Data/Restaurants`);
+  // banners: Array<any>=[];
 
 
   signOut(){

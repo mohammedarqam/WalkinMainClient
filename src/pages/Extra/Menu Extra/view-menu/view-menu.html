@@ -5,9 +5,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-  <ion-card *ngFor="let i of  (items | async)?.slice().reverse()" >
+  <ion-card (click)="viewItem(i)" *ngFor="let i of  (items | async)?.slice().reverse()" >
     <ion-card-content>
       <ion-card-title>{{i.ItemName}} </ion-card-title>
     </ion-card-content>

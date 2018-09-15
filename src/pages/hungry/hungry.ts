@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
 import { ViewMenuPage } from '../Extra/Menu Extra/view-menu/view-menu';
 import firebase from 'firebase';
 import { CartPage } from '../cart/cart';
+import { ViewNumberPackagesPage } from '../Extra/Package Extra/view-number-packages/view-number-packages';
+import { ViewTypePackagesPage } from '../Extra/Package Extra/view-type-packages/view-type-packages';
 
 @IonicPage()
 @Component({
@@ -14,10 +16,10 @@ import { CartPage } from '../cart/cart';
 })
 export class HungryPage {
 
-  restaurantRef = this.db.list(`Restaurants`);
+  restaurantRef = this.db.list(`Restaurant Data/Restaurants`);
   restaurants: Observable<any[]>;
 
-  bannersRef = firebase.database().ref("Banners");
+  bannersRef = firebase.database().ref("Extra Data/Banners");
   banners: Array<any>=[];
 
   constructor(
@@ -52,6 +54,13 @@ export class HungryPage {
     this.navCtrl.push(ViewMenuPage,{rKey : rKey, rName : rName});
   }
 
+  viewNumberPacks(numb){
+    this.navCtrl.push(ViewNumberPackagesPage,{numb : numb})
+  }
+
+  viewTypePacks(type){
+    this.navCtrl.push(ViewTypePackagesPage,{type : type})
+  }
 
 
   viewCart(){

@@ -4,6 +4,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as firebase from 'firebase';
+import { ItemDetailsPage } from '../item-details/item-details';
 
 @IonicPage()
 @Component({
@@ -22,7 +23,7 @@ export class ViewMenuPage {
   public db : AngularFireDatabase,
   public navParams: NavParams
   ) {
-    this.menuRef =db.list(`Menus/${this.rKey}`, ref=>ref.orderByChild("Ordered"));
+    this.menuRef =db.list(`Restaurant Data/Menus/${this.rKey}`, ref=>ref.orderByChild("Ordered"));
 
     this.items = this.menuRef.snapshotChanges().pipe(
       map(changes => 
@@ -31,5 +32,7 @@ export class ViewMenuPage {
     );
   }
 
-
+  viewItem(item){
+    this.navCtrl.push(ItemDetailsPage,{item : item})
+  }
 }

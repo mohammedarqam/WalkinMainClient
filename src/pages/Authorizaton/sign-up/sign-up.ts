@@ -10,7 +10,7 @@ import * as firebase from 'firebase';
 })
 export class SignUpPage {
 
-  userRef = firebase.database().ref("Users");
+  userRef = firebase.database().ref("User Data/Users");
 
   email : string;
   pass : string;
@@ -46,15 +46,6 @@ export class SignUpPage {
     }else{
       this.presentToast("Enter your name");
     }
-    // if(this.email){
-    //   if(this.pass){
-    //     this.register();
-    //   }else{
-    //     this.presentToast("Enter Password");
-    //   }
-    // }else{
-    //   this.presentToast("Enter Email");
-    // }
   }
 
   register(){

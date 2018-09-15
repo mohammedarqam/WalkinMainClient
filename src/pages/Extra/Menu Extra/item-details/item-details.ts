@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as firebase from 'firebase';
 
-/**
- * Generated class for the ItemDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -15,11 +11,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ItemDetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  item = this.navParams.get("item");
+
+  constructor(
+  public navCtrl: NavController, 
+  public navParams: NavParams
+  ) {
+    console.log(this.item);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ItemDetailsPage');
-  }
 
 }
