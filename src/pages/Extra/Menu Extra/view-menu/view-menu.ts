@@ -33,6 +33,6 @@ export class ViewMenuPage {
   }
 
   viewItem(item){
-    this.navCtrl.push(ItemDetailsPage,{item : item})
+    this.navCtrl.push(ItemDetailsPage,{item : item,rKey : this.rKey})
   }
 }

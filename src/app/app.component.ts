@@ -12,7 +12,7 @@ import { TabsPage } from '../pages/Utility/tabs/tabs';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = MainAuthViewPage ;
+  rootPage:any = TabsPage;
 
   constructor(
   platform: Platform, 
@@ -22,28 +22,27 @@ export class MyApp {
   ) {
     platform.ready().then(() => {
 
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-        firebase.database().ref("User Data/Users").child(user.uid).once('value',itemSnap=>{
-            if(itemSnap.exists()){
-              var welMsg = "Welcome"+" "+itemSnap.val().Name;
-              this.rootPage = TabsPage;
-              this.presentToast(welMsg);
-              splashScreen.hide();
-            }else{
-              firebase.auth().signOut().then(()=>{
-                this.rootPage = MainAuthViewPage;
-                this.presentToast("You are not registered as our Partner")
-                splashScreen.hide();
-              })
-            }
-    });
-      }
-      else{
-        this.rootPage = MainAuthViewPage;
-        splashScreen.hide();
-      }
-    });  
+    //   firebase.auth().onAuthStateChanged((user) => {
+    //     if (user) {
+    //     firebase.database().ref("User Data/Users").child(user.uid).once('value',itemSnap=>{
+    //         if(itemSnap.exists()){
+    //           var welMsg = "Welcome"+" "+itemSnap.val().Name;
+    //           this.rootPage = TabsPage;
+    //           splashScreen.hide();
+    //         }else{
+    //           firebase.auth().signOut().then(()=>{
+    //             this.rootPage = MainAuthViewPage;
+    //             this.presentToast("You are not registered as our Partner")
+    //             splashScreen.hide();
+    //           })
+    //         }
+    // });
+    //   }
+    //   else{
+    //     this.rootPage = MainAuthViewPage;
+    //     splashScreen.hide();
+    //   }
+    // });  
 
 
 
